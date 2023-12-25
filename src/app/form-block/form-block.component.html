@@ -1,0 +1,14 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <div class="row mt-3 text-end justify-content-start ">
+        <div class="col-1 ">
+            <label for="message" class="form-label mt-1">Message</label>
+        </div>
+        <div class="col-10 pe-0">
+            <input type="text" class="form-control" id="message" formControlName="message" style="width:2fr;">
+        </div>
+
+        <div class="col-1 ">
+            <button class="btn btn-primary">Send Text</button>
+        </div>
+    </div>
+</form>
