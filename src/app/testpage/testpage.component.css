@@ -1,0 +1,89 @@
+.shakra-dark {
+    background-color: #1E1F23;
+    color: white;
+}
+
+.shakra-grey {
+    background-color: #2B2D30;
+    color: white;
+}
+
+.shakra-dark-grey {
+    background-color: #1F2024;
+    color: white;
+}
+
+.shakra-main-grey {
+    background-color: #373A3E;
+    color: white;
+}
+
+.shakra-light {
+    background-color: #313337;
+    color: white;
+}
+
+.room-bar {
+    flex: 0 0 auto;
+    width: 80px;
+    flex-direction: column;
+    display: flex;
+}
+
+.contact-bar {
+    flex: 0 0 auto;
+    width: 20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-bar {
+    flex: 0 0 auto;
+    width: 65%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar {
+    flex: 0 0 auto;
+    width: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.top-bar {
+    flex: 0 0 auto;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.flex-col {
+    flex-direction: column;
+    display: flex;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid 0px yellow;
+    /* for debugging purposes */
+}
+
+.logo {
+    width: 70%;
+    height: 60%;
+    border-radius: 35%;
+    padding: 0%;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 80%;
+}
