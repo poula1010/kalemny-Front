@@ -1,0 +1,47 @@
+<div class="row d-flex justify-content-center bg-img" style="height: 100%;color: white;">
+    <div class="col-6 d-flex align-items-center justify-content-center" style="height: 90%;">
+        <div class="p-4 form-blue " style="width: 100%;border-radius: 10px;border:1px rgb(44, 42, 42) solid">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="row text-center">
+                    <h4>Register</h4>
+                </div>
+                <div class="form-group">
+                    <label class="ps-2 form-lbl">username</label>
+                    <input class="form-control form-input" type="text" name="username" placeholder="username"
+                        formControlName="username">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="ps-2 form-lbl">email</label>
+                    <input type="text " name="email" class="form-control form-input" placeholder="Email"
+                        formControlName="email">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="ps-2 form-lbl">name</label>
+                    <input type="text" name="name" class="form-control form-input" placeholder="name"
+                        formControlName="name">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="ps-2 form-lbl">password</label>
+                    <input type="password" name="password" class="form-control form-input" placeholder="password"
+                        formControlName="password">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="ps-2 form-lbl">confirm-password</label>
+                    <input class="form-control form-input" type="password" name="confirm-password"
+                        placeholder="confirm-password" formControlName="confirm-password">
+                </div>
+
+                <button class="btn btn-dark mt-3">Register</button>
+                <a class="link-light d-block " routerLink="/auth/login" style="cursor: pointer;">Have an account? login
+                    here!</a>
+                <p class="text-danger border-danger"
+                    *ngIf="registerForm.errors?.['unmatchedPasswords'] && registerForm.get('password').touched && registerForm.get('confirm-password').touched ">
+                    *the passwords must be matched</p>
+            </form>
+        </div>
+    </div>
+</div>

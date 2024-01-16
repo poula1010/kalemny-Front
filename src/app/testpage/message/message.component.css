@@ -1,0 +1,19 @@
+.message-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.text-col {
+    width: 70px;
+    flex: 0 0 auto;
+}
+
+.message-col {
+    flex: 0 0 auto;
+    width: calc(100% - 70px);
+}
+
+:host {
+    height: fit-content;
+}

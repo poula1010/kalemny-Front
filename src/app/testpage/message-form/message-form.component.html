@@ -1,0 +1,11 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <div class="row form-row">
+        <div class=" form-row">
+            <textarea class="form-control message-input overflow-y-scroll" formControlName="message"
+                placeholder="Message"></textarea>
+        </div>
+        <div class=" form-row d-flex align-items-center justify-content-end pe-3">
+            <button class="btn btn-dark">Send Message</button>
+        </div>
+    </div>
+</form>

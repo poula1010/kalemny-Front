@@ -5,6 +5,8 @@ import { TextBlockComponent } from './text-block/text-block.component';
 import { FormBlockComponent } from './form-block/form-block.component';
 import { SocketService } from './services/socket.service';
 import { TestpageComponent } from './testpage/testpage.component';
+import { environment } from '../environments/environment.development';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +20,12 @@ export class AppComponent implements OnInit {
   socket: any;
   messages: string[] = [];
 
-  constructor(private socketService: SocketService) { }
+  constructor(private socketService: SocketService, private authService: AuthService) { }
   ngOnInit(): void {
     this.socket = this.socketService.getSocket();
+    console.log(environment.serverUrl)
+    this.authService.autologin();
+
   }
 
 }

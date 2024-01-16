@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MessageService } from '../services/messages.service';
 import { CommonModule } from '@angular/common';
+import { MessageInterface } from '../interfaces/MessageInterface';
 
 @Component({
   selector: 'app-text-block',
@@ -17,6 +18,6 @@ export class TextBlockComponent implements OnInit {
     });
   }
   constructor(private messageService: MessageService) { }
-  messages: string[] = [];
+  messages: MessageInterface[] = [];
   messageSubscription: Subscription;
 }

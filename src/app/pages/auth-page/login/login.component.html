@@ -1,0 +1,25 @@
+<div class="row d-flex justify-content-center shakra-light" style="height: 100%;">
+    <div class="col-8 d-flex align-items-center justify-content-center" style="height: 90%;">
+        <div class="p-4 shakra-main-grey " style="width: 100%;border-radius: 10px;border:1px rgb(44, 42, 42) solid">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="row text-center">
+                    <h4>Login</h4>
+                </div>
+                <div class="form-group">
+                    <label class="ps-2">Username or email</label>
+                    <input class="form-control form-input" type="text" formControlName="usernameOrEmail" name="username"
+                        placeholder="Username or email">
+                </div>
+                <div class="form-group mt-3">
+                    <label class="ps-2">Password</label>
+                    <input type="password" name="password" formControlName="password" class="form-control form-input"
+                        placeholder="Password">
+                </div>
+                <button class="btn btn-dark mt-3">Login</button>
+                <a class="link-light d-block " routerLink="/auth/register" style="cursor: pointer;">
+                    Have no account? register here!
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

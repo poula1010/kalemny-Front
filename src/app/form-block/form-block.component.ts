@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from '../services/messages.service';
 import { SocketService } from '../services/socket.service';
 
@@ -14,9 +14,9 @@ export class FormBlockComponent implements OnInit {
   messageForm: FormGroup;
   constructor(private messageService: MessageService, private socketService: SocketService) { }
   ngOnInit(): void {
-    this.messageForm = new FormGroup({ 'message': new FormControl("") })
+    this.messageForm = new FormGroup({ 'message': new FormControl("", [Validators.required]) })
   }
   onSubmit() {
-    this.socketService.sendMessage(this.messageForm.value.message);
+    // this.socketService.sendMessage(this.messageForm.value.message);
   }
 }

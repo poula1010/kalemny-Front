@@ -1,0 +1,22 @@
+<div class="container-fluid shakra-dark" style="height: 100%; width: 100%; font-family: 'Karla'; ">
+    <div class="row shakra-dark" style="height: 3%"></div>
+    <div class="row" style="height: 97%">
+        <app-room-bar class="col room-bar p-0 shakra-dark flex-col align-items-center"></app-room-bar>
+        <div class="col p-0">
+            <div class="container-fluid" style="height: 100%">
+                <div class="row " style="margin-bottom: 2px; height: calc(6% - 2px)">
+                    <app-search-bar class="col  contact-bar shakra-grey " style="border-radius: 8px 0px 0px 0px;">
+                    </app-search-bar>
+                    <app-friend-requests-bar class="col top-bar shakra-light"
+                        style="height: 100%;"></app-friend-requests-bar>
+                </div>
+                <div class="row" style="height: 94%;">
+                    <app-friends-bar class="col contact-bar shakra-grey"></app-friends-bar>
+                    <router-outlet class="col main-bar shakra-main-grey "
+                        style="border-right: 1px white; height: 100%;"></router-outlet>
+                    <div class="col sidebar shakra-light">side</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

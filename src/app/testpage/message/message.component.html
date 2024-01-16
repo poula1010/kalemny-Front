@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="text-col d-flex justify-content-start img-col">
+        <img [src]="imageUrl" class="message-img" alt="text">
+    </div>
+    <div class="message-col" style="width: 1fr">
+        <div class="row align-middle">
+            <div class="col-1 text-center ps-1" style="font-size: 20px; font-weight: 600;font-style:oblique;">
+                {{messageDto.name}}
+            </div>
+            <div class="col-lg-2 d-flex align-items-center justify-content-start ps-1"
+                style="font-size: 13px; font-weight: 100;opacity: 80%;">
+                {{messageDto.timeStamp | date:'short'}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>
+                    {{messageDto.message}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

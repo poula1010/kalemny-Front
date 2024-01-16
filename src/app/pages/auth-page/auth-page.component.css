@@ -1,0 +1,15 @@
+:host {
+    height: 100%;
+}
+
+.form-input {
+    background-color: #1E1F23;
+    color: rgb(207, 207, 207);
+    border-color: rgb(29, 27, 27);
+}
+
+::placeholder {
+    color: rgb(207, 207, 207);
+    opacity: 0.8;
+    /* Firefox */
+}

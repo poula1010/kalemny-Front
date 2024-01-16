@@ -1,4 +1,4 @@
-<div class="container-fluid shakra-dark" style="height: 100%; width: 100%;">
+<div class="container-fluid shakra-dark" style="height: 100%; width: 100%; font-family: 'Karla'; ">
     <div class="row shakra-dark" style="height: 3%"></div>
     <div class="row" style="height: 97%">
         <div class="col room-bar p-0 shakra-dark flex-col align-items-center">
@@ -16,8 +16,17 @@
                     <div class="col top-bar shakra-light">top</div>
                 </div>
                 <div class="row" style="height: 94%;">
-                    <div class="col contact-bar shakra-grey">cont</div>
-                    <div class="col main-bar shakra-main-grey" style="border-right: 1px white;">Main</div>
+                    <app-friends-bar class="col contact-bar shakra-grey"></app-friends-bar>
+                    <div class="col main-bar shakra-main-grey " style="border-right: 1px white; height: 100%;">
+                        <div class="row overflow-y-scroll messages-block p-1 d-flex flex-col flex-nowrap"
+                            style="border: 1px solid rgb(48, 48, 48);">
+                            <app-message *ngFor="let inmessage of messagesDto;" [messageDto]="inmessage"></app-message>
+
+                        </div>
+                        <div class="row pt-2" style="height: 15%;">
+                            <app-message-form></app-message-form>
+                        </div>
+                    </div>
                     <div class="col sidebar shakra-light">side</div>
                 </div>
             </div>

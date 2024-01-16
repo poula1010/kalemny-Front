@@ -1,0 +1,13 @@
+.friend-row:hover {
+    background-color: #3e4146;
+    opacity: 90%;
+}
+
+:host {
+    color: #c2cbd6;
+    font-size: 18px;
+}
+
+.friend-row {
+    cursor: pointer;
+}

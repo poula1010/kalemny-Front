@@ -3,3 +3,28 @@
     height: 100%;
     ;
 }
+
+.shakra-dark {
+    background-color: #1E1F23;
+    color: white;
+}
+
+.shakra-grey {
+    background-color: #2B2D30;
+    color: white;
+}
+
+.shakra-dark-grey {
+    background-color: #1F2024;
+    color: white;
+}
+
+.shakra-main-grey {
+    background-color: #373A3E;
+    color: white;
+}
+
+.shakra-light {
+    background-color: #313337;
+    color: white;
+}

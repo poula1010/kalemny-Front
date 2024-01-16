@@ -1,0 +1,31 @@
+.form-input {
+    background-color: #1e1f2398;
+    color: rgb(255, 255, 255);
+    border-color: rgb(29, 27, 27);
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0.9;
+    /* Firefox */
+}
+
+.bg-img {
+    background-image: url(/assets/starry2.png);
+    background-size: cover;
+    background-position-x: left;
+
+}
+
+.form-blue {
+    background-color: #4c6b93e0;
+}
+
+.form-lbl {
+    color: white;
+    font-style: italic;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
