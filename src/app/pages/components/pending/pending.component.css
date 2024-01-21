@@ -1,0 +1,12 @@
+:host {
+    flex: 0 0 auto;
+    width: 65%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--shakra-main-grey);
+}
+
+.user-container {
+    border: 1 solid black;
+    height: 80%;
+}

@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   constructor(private socketService: SocketService, private authService: AuthService) { }
   ngOnInit(): void {
     this.socket = this.socketService.getSocket();
-    console.log(environment.serverUrl)
     this.authService.autologin();
 
   }

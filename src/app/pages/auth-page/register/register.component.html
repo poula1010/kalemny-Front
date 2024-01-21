@@ -39,8 +39,9 @@
                 <a class="link-light d-block " routerLink="/auth/login" style="cursor: pointer;">Have an account? login
                     here!</a>
                 <p class="text-danger border-danger"
-                    *ngIf="registerForm.errors?.['unmatchedPasswords'] && registerForm.get('password').touched && registerForm.get('confirm-password').touched ">
-                    *the passwords must be matched</p>
+                    *ngIf="registerForm.value.username.length < 4 && registerForm.get('username').touched">
+                    *the username must be at least 4 characters</p>
+
             </form>
         </div>
     </div>

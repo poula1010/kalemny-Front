@@ -1,0 +1,13 @@
+<div class="row row-border">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <img [src]="'assets/'+user.image" alt="text" style="height: 40px;width: 40px; border-radius: 50%;">
+            <p class="text-center m-0 ps-3">{{user.username}}</p>
+        </div>
+        <div>
+            <button class="btn btn-success me-2" (click)="addFriend(user.username)">Accept</button>
+            <button class="btn btn-danger" (click)="rejectFriend(user.username)">Reject</button>
+        </div>
+    </div>
+
+</div>

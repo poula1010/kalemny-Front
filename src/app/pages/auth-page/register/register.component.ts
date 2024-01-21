@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      'username': new FormControl("", [Validators.required]),
+      'username': new FormControl("", [Validators.required, Validators.minLength(4)]),
       "email": new FormControl("", [Validators.required, Validators.email, Validators.maxLength(64)]),
       "name": new FormControl("", [Validators.required, Validators.maxLength(32)]),
       "password": new FormControl("", [Validators.required]),
@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit {
         password: this.registerForm.value.password
       }
       this.authService.signUp(registerDto).subscribe(response => {
-        console.log(response);
       });
 
     }

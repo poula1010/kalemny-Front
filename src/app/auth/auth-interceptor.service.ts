@@ -7,7 +7,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: 
     const authService = inject(AuthService);
     return authService.user.pipe(take(1),
         exhaustMap(user => {
-            console.log(authService);
+
             if (!user) {
                 return next(req);
             }

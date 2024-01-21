@@ -1,0 +1,22 @@
+<div class="row">
+    <h5>Add Friend</h5>
+</div>
+<div class="row">
+    <p class="text-small">you can add friends using their username</p>
+    <hr>
+</div>
+<div class="row mb-3">
+    <form [formGroup]="userSearchForm">
+        <input type="text" class="text-input" placeholder="you can add friends using their username" (input)="test()"
+            formControlName="username">
+    </form>
+</div>
+<div class="row user-container mt-3 ms-2">
+    <div class="overflow-y-scroll d-flex flex-column flex-nowrap"
+        style="border: 1px solid rgb(48, 48, 48); height: 90%;">
+        <app-friend-request-row class="messages-block p-1  p-3 " style="border-bottom: 1px solid grey;"
+            *ngFor="let foundUser of users" [user]="foundUser"
+            [requestSent]="usersWithSentRequestsMap.has(foundUser.id)"
+            [alreadyFriends]="alreadyFriendsSet.has(foundUser.id)"></app-friend-request-row>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row row-border">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <img [src]="'assets/'+user.image" alt="text" style="height: 40px;width: 40px; border-radius: 50%;">
+            <p class="text-center m-0 ps-3">{{user.username}}</p>
+        </div>
+        <div *ngIf="!alreadyFriends">
+            <button class="btn btn-dark" *ngIf="!requestSent" (click)="sendFriendRequest(user.username)">Send
+                Request</button>
+            <button class="btn btn-dark" *ngIf="requestSent">Already Sent A Request</button>
+        </div>
+        <div *ngIf="alreadyFriends">
+            <button class="btn btn-outline-success" disabled>Already Friends!</button>
+        </div>
+    </div>
+
+</div>

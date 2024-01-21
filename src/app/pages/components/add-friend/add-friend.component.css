@@ -4,4 +4,11 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--shakra-main-grey);
+    padding: 2%;
+}
+
+
+.user-container {
+    border: 1 solid black;
+    height: 80%;
 }

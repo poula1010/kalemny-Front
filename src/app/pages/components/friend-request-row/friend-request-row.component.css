@@ -1,0 +1,7 @@
+:host:hover {
+    background-color: rgba(128, 128, 128, 0.596);
+}
+
+:host {
+    border-radius: 5px;
+}

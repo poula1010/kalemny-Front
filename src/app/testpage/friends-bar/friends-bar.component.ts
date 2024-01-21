@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FriendRowComponent } from './friend-row/friend-row.component';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FriendRowComponent, UserDto } from './friend-row/friend-row.component';
 import { FriendsService } from '../../services/friends.service';
 import { CommonModule } from '@angular/common';
-interface Friend {
-  username: string,
-  email: string,
-  id: number
-  image: string,
-}
+import { Subscription, take, tap } from 'rxjs';
+
 @Component({
   selector: 'app-friends-bar',
   standalone: true,
@@ -15,16 +11,18 @@ interface Friend {
   templateUrl: './friends-bar.component.html',
   styleUrl: './friends-bar.component.css'
 })
-export class FriendsBarComponent implements OnInit {
+export class FriendsBarComponent implements OnInit, OnDestroy {
   constructor(private friendsService: FriendsService) { }
+  friendsSubscription: Subscription;
+  ngOnDestroy(): void {
+    this.friendsSubscription.unsubscribe();
+  }
 
   ngOnInit(): void {
     this.friends = [];
-    this.friendsService.getFriends().subscribe((response: Friend[]) => {
-      for (let friend of response) {
-        this.friends.push(friend)
-      }
+    this.friendsSubscription = this.friendsService.friendsSubject.subscribe(friends => {
+      this.friends = friends;
     })
   }
-  friends: Friend[];
+  friends: UserDto[];
 }
