@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { User } from "../auth/user.model";
 import { BehaviorSubject, catchError, tap, throwError } from "rxjs";
 import { UserDto } from "../testpage/friends-bar/friend-row/friend-row.component";
+import { environment } from "../../environments/environment";
+import { SuccessOrFailDto } from "../interfaces/SuccessOrFailDto";
 export interface RegisterDto {
     name: string,
     email: string,
@@ -19,14 +21,15 @@ interface JwtAuthResponse {
 @Injectable()
 export class AuthService {
     constructor(private http: HttpClient, private router: Router) { }
-    SIGNUP_API_URL = "http://localhost:8081/api/auth/register";
-    LOGIN_API_URL = "http://localhost:8081/api/auth/login";
-    AUTHENTICATED_API_URL = 'http:localhost:8081/api/auth/authenticated';
-
+    SIGNUP_API_URL = environment.serverUrl + "/api/auth/register";
+    LOGIN_API_URL = environment.serverUrl + "/api/auth/login";
+    AUTHENTICATED_API_URL = environment.serverUrl + '/api/auth/authenticated';
+    USERNAMEAVAILABLE_API_URL = environment.serverUrl + '/api/auth/username'
+    EMAILAVAILABLE_API_URL = environment.serverUrl + '/api/auth/email'
     user = new BehaviorSubject<User>(null);
     private tokenExpirationTimer: any;
     signUp(registerDto: RegisterDto) {
-        return this.http.post(this.SIGNUP_API_URL, registerDto);
+        return this.http.post<SuccessOrFailDto>(this.SIGNUP_API_URL, registerDto);
     }
     login(usernameOrEmail: string, password: string) {
         const loginDto = { usernameOrEmail: usernameOrEmail, password: password };
@@ -42,6 +45,12 @@ export class AuthService {
     }
     isAuthenticated() {
         return this.http.get(this.AUTHENTICATED_API_URL);
+    }
+    usernameAvailable(username: string) {
+        return this.http.get<boolean>(this.USERNAMEAVAILABLE_API_URL, { params: { username: username } });
+    }
+    emailAvailable(email: string) {
+        return this.http.get<boolean>(this.EMAILAVAILABLE_API_URL, { params: { email: email } })
     }
     autologin() {
 

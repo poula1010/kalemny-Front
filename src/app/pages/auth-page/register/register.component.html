@@ -35,13 +35,18 @@
                         placeholder="confirm-password" formControlName="confirm-password">
                 </div>
 
-                <button class="btn btn-dark mt-3">Register</button>
+                <button class="btn btn-dark mt-3" [disabled]="!registerForm.valid">Register</button>
                 <a class="link-light d-block " routerLink="/auth/login" style="cursor: pointer;">Have an account? login
                     here!</a>
                 <p class="text-danger border-danger"
                     *ngIf="registerForm.value.username.length < 4 && registerForm.get('username').touched">
                     *the username must be at least 4 characters</p>
-
+                <p class="text-danger border-danger" *ngIf="registerForm.errors?.['unmatchedPasswords']">
+                    *the passwords must match</p>
+                <p class="text-danger border-danger" *ngIf="registerForm.get('username').errors?.['usernameTaken']">
+                    *username is already in use</p>
+                <p class="text-danger border-danger" *ngIf="registerForm.get('email').errors?.['emailTaken']">
+                    *email is already in use</p>
             </form>
         </div>
     </div>
