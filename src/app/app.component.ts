@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.socket = this.socketService.getSocket();
     this.authService.autologin();
-
+    
   }
 
 }

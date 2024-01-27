@@ -10,14 +10,20 @@ import { PendingComponent } from './pages/components/pending/pending.component';
 import { OnlineComponent } from './pages/components/online/online.component';
 import { AllComponent } from './pages/components/all/all.component';
 import { AddFriendComponent } from './pages/components/add-friend/add-friend.component';
+import { FriendPageComponent } from './pages/friend-page/friend-page.component';
 
 export const routes: Routes = [
     {
         path: "", component: MainPageComponent, canActivate: [AuthGuard], children: [
-            { path: "", component: OnlineComponent },
-            { path: "pending", component: PendingComponent },
-            { path: "all", component: AllComponent },
-            { path: "add-friend", component: AddFriendComponent }
+            {
+                path: "", component: FriendPageComponent, children: [
+                    { path: "", redirectTo: "online", pathMatch: "prefix" },
+                    { path: "online", component: OnlineComponent },
+                    { path: "pending", component: PendingComponent },
+                    { path: "all", component: AllComponent },
+                    { path: "add-friend", component: AddFriendComponent }
+                ]
+            }
         ]
     },
     {

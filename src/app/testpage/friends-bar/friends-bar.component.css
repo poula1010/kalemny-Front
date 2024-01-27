@@ -1,0 +1,10 @@
+.friends-btn:hover {
+    background-color: grey;
+    opacity: 50%;
+    border-radius: 5px;
+}
+
+.friends-btn {
+    cursor: pointer;
+
+}

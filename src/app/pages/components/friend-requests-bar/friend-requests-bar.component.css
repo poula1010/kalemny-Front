@@ -30,7 +30,38 @@
     background-color: rgba(111, 111, 126, 0.644);
 }
 
-.option-active {
-    background-color: rgba(111, 111, 126, 0.644);
-    ;
+
+
+@media (max-width: 768px) {
+    .friend-options {
+        margin-left: 3px;
+        margin-right: 3px;
+        padding-left: 4px;
+        padding-right: 4px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .main-text {
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .friend-options {
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+        border-radius: 2px;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    .main-text {
+        font-weight: bold;
+        font-size: 12px;
+    }
 }

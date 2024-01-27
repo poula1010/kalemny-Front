@@ -1,6 +1,6 @@
 :host {
     flex: 0 0 auto;
-    width: 65%;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--shakra-main-grey);

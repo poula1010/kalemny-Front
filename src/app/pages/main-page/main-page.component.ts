@@ -8,11 +8,12 @@ import { MessageFormComponent } from '../../testpage/message-form/message-form.c
 import { FriendRequestsBarComponent } from '../components/friend-requests-bar/friend-requests-bar.component';
 import { RouterModule } from '@angular/router';
 import { FriendsService } from '../../services/friends.service';
+import { FriendPageComponent } from '../friend-page/friend-page.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [RouterModule, RoomBarComponent, FriendsBarComponent, FriendRowComponent, SearchBarComponent, MessageComponent, FriendRequestsBarComponent, MessageFormComponent],
+  imports: [RouterModule, RoomBarComponent, FriendsBarComponent, FriendRowComponent, SearchBarComponent, MessageComponent, FriendRequestsBarComponent, MessageFormComponent, FriendPageComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })

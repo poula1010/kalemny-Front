@@ -4,6 +4,11 @@
     ;
 }
 
+.option-active {
+    background-color: rgba(111, 111, 126, 0.644);
+    ;
+}
+
 :root {
     --shakra-grey: #2B2D30;
     --shakra-dark: #1E1F23;

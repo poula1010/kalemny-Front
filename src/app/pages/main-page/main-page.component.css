@@ -5,30 +5,31 @@
     display: flex;
 }
 
+
 .contact-bar {
     flex: 0 0 auto;
-    width: 20%;
+    width: 250px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .main-bar {
     flex: 0 0 auto;
-    width: 65%;
+    width: 80%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .sidebar {
     flex: 0 0 auto;
-    width: 15%;
+    width: 20%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .top-bar {
     flex: 0 0 auto;
-    width: 80%;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -91,10 +92,10 @@
     max-height: 750px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
     .contact-bar {
         flex: 0 0 auto;
-        width: 20%;
+        width: 200px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -114,7 +115,45 @@
         visibility: hidden;
     }
 
+    .room-bar {
+        visibility: hidden;
+        width: 0px;
+    }
 
+}
+
+@media (max-width: 480px) {
+    :host {
+        font-size: 11px !important;
+    }
+
+    .contact-bar {
+        flex: 0 0 auto;
+        width: 150px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-bar {
+        flex: 0 0 auto;
+        width: 80%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .room-bar {
+        visibility: hidden;
+        width: 0px;
+    }
+
+    .top-bar {
+        flex: 0 0 auto;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 3px;
+        padding-left: 3px;
+    }
 }
 
 @media screen and (max-height: 700px) {

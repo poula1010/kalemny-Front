@@ -26,5 +26,19 @@ export class SocketService {
     sendMessage(message: string) {
         this.socket.emit("message-sent", message)
     }
+    joinRoom(roomId: number) {
+        // const roomIdToString = roomId.toString();
+        this.socket.emit('join', roomId);
+        this.socket.on("refresh", () => {
+            console.log('Room Refreshed')
+        })
+    }
+    leaveRoom(roomId: number) {
 
+        this.socket.emit('leave', roomId);
+    }
+
+    refreshRoom(roomId: number) {
+        this.socket.emit("refresh", roomId);
+    }
 }
