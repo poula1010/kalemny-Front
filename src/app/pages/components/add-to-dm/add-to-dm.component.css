@@ -1,0 +1,46 @@
+.friend-row:hover {
+    background-color: #3e4146;
+    opacity: 90%;
+}
+
+:host {
+    color: #c2cbd6;
+    font-size: 18px;
+}
+
+.friend-row {
+    cursor: pointer;
+}
+
+.dm-container p {
+    font-size: small;
+    font-weight: 100;
+    margin-bottom: 0.5rem;
+}
+
+.dm-container h4 {
+    font-weight: 600;
+    margin-bottom: 0rem;
+}
+
+.dm-container {
+    height: 300px;
+    width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .dm-container {
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .dm-container {
+        width: 240px;
+    }
+
+
+}

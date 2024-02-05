@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from '../../services/messages.service';
 import { SocketService } from '../../services/socket.service';
+import { RoomService } from '../../services/room.service';
+import { MessageDto } from '../../interfaces/MessageDto';
+import { AuthService } from '../../services/auth.service';
+import { UserDto } from '../friends-bar/friend-row/friend-row.component';
+import { SendMessageDto } from '../../interfaces/SendMessageDto';
 
 @Component({
   selector: 'app-message-form',
@@ -12,14 +17,28 @@ import { SocketService } from '../../services/socket.service';
 })
 export class MessageFormComponent {
   messageForm: FormGroup;
-  constructor(private messageService: MessageService, private socketService: SocketService) { }
+  roomId: number;
+  constructor(private roomService: RoomService, private authService: AuthService, private socketService: SocketService) { }
   ngOnInit(): void {
     this.messageForm = new FormGroup({ 'message': new FormControl("", [Validators.required]) })
+    this.roomId = this.roomService.room.value;
   }
   onSubmit() {
     if (this.messageForm.valid) {
-      this.socketService.sendMessageRequest({ message: this.messageForm.value.message, name: "test", timeStamp: new Date() });
-      this.messageForm.reset();
+
+      const message = this.messageForm.get("message").value;
+      const messageDto: SendMessageDto = {
+        "message": message,
+        "roomId": this.roomId
+      };
+
+      this.roomService.sendMessage(messageDto).subscribe(response => {
+        if (response.success) {
+          this.socketService.refreshRoom(this.roomId);
+          this.messageForm.reset();
+        }
+      });
+
     }
   }
 }

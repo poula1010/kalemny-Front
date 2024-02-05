@@ -1,0 +1,7 @@
+.messages-block {
+    height: 85%;
+}
+
+:host {
+    padding: 0;
+}

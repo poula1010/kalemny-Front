@@ -3,16 +3,21 @@ import { Socket, io } from "socket.io-client";
 import { MessageService } from "./messages.service";
 import { MessageInterface } from "../interfaces/MessageInterface";
 import { environment } from "../../environments/environment.development";
+import { RoomService } from "./room.service";
 
 @Injectable({ providedIn: "root" })
 export class SocketService {
     private socket: Socket;
 
-    constructor(private messageService: MessageService) {
+    constructor(private messageService: MessageService, private roomService: RoomService) {
         if (!this.socket) {
-            this.socket = io("http://34.76.214.207:3000");
+            this.socket = io(environment.sockerServer);
             this.socket.on("server-to-client", message => {
                 this.messageService.addMessage(message);
+            })
+            this.socket.on("refresh", () => {
+                console.log("got refresh")
+                this.roomService.refreshRoomSub.next(true);
             })
         }
     }
@@ -28,6 +33,7 @@ export class SocketService {
     }
     joinRoom(roomId: number) {
         // const roomIdToString = roomId.toString();
+        this.roomService.joinRoom(roomId);
         this.socket.emit('join', roomId);
         this.socket.on("refresh", () => {
             console.log('Room Refreshed')

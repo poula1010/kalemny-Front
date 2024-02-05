@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { MessageInterface } from '../../interfaces/MessageInterface';
+import { MessageDto } from '../../interfaces/MessageDto';
 
 @Component({
   selector: 'app-message',
@@ -18,5 +19,5 @@ export class MessageComponent implements OnInit {
   Pics: string[];
   imageUrl: string;
   @Input()
-  messageDto: MessageInterface;
+  message: MessageDto;
 }

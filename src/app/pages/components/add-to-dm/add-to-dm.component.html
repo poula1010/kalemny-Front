@@ -1,0 +1,20 @@
+<div class="container dm-container ">
+    <h4>Select Friends</h4>
+    <p>you can select more than one friend</p>
+    <form>
+        <input class=" input-color border-5p" type="text" placeholder="Search for friend by username"
+            style="width: 100%;">
+    </form>
+    <div class="row overflow-y-scroll d-flex flex-nowrap flex-column mt-2 mb-2" style="height: 50%;">
+        <app-friend-dm-select *ngFor="let friend of friendsList" [user]="friend"></app-friend-dm-select>
+    </div>
+    <div class="row">
+        <div class="col-8">
+        </div>
+        <div class="col-4 ">
+            <div class="row pe-3">
+                <button class="btn btn-success m-1" (click)="createRoom()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

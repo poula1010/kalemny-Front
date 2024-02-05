@@ -1,10 +1,65 @@
 .friends-btn:hover {
-    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.596);
     opacity: 50%;
     border-radius: 5px;
 }
 
 .friends-btn {
     cursor: pointer;
+    border-radius: 5px;
+}
 
+.add-btn {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.create-dm {
+
+    width: 100px;
+    position: fixed;
+    translate: 147px -84px;
+    opacity: 100%;
+}
+
+.create-dm:hover {
+    opacity: 100%;
+    background-color: initial;
+}
+
+.dm-block {
+    border: 2px solid #222329;
+    /* height: 40%; */
+    position: fixed;
+    translate: 201px 0px;
+    background-color: #2d2f37;
+    border-radius: 0.7rem;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    .create-dm {
+        width: 100px;
+        position: fixed;
+        translate: 95px -84px;
+        opacity: 100%;
+    }
+
+    .dm-block {
+        translate: 150px 0px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .create-dm {
+        width: 100px;
+        position: fixed;
+        translate: 50px -84px;
+        opacity: 100%;
+    }
+
+    .dm-block {
+        translate: 110px 0px;
+    }
 }

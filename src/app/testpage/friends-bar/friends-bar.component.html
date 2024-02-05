@@ -1,7 +1,24 @@
-<div class="friends-btn">
+<div class="friends-btn" routerLink="/friends" routerLinkActive="option-active">
     <h4 class="ps-2">
         Friends <img src="/assets/friends.png " style="width:15%; opacity: 80%;">
     </h4>
 </div>
+<div class="friends-btn" routerLink="/room" routerLinkActive="option-active">
+    <h4 class="ps-2">
+        Room
+    </h4>
+</div>
 <hr>
-<app-friend-row *ngFor="let friend of friends" [user]="friend"></app-friend-row>
+<div class="d-flex justify-content-between align-items-center hover-color mb-2 ">
+    <p class="p-1 m-0">
+        Direct Messages
+    </p>
+    <div class="pointer" (mouseenter)="showAddDm=true" (mouseleave)="showAddDm=false" (click)="toggleDmBlock()">
+        <img class="pe-2" src="/assets/plus.png" style="height:4ex">
+    </div>
+</div>
+<img class="create-dm" src="/assets/createDm.svg" *ngIf="showAddDm">
+<div class="row dm-block" style="border: 1px solid black;" *ngIf="showDmBlock">
+    <app-add-to-dm class="p-2"></app-add-to-dm>
+</div>
+<app-room-row *ngFor="let room of rooms" [room]="room"></app-room-row>

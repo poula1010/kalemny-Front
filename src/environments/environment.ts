@@ -1,4 +1,6 @@
 export const environment = {
     production: true,
-    serverUrl: "http://34.76.214.207:8081"
+    serverUrl: "http://34.76.214.207:8081",
+    sockerServer: "http://34.76.214.207:3000"
+
 };

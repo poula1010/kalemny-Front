@@ -4,9 +4,27 @@
     ;
 }
 
+.input-color {
+    background-color: #9d9d9d36;
+    color: white;
+}
+
+.border-5p {
+    border-radius: 5px;
+}
+
 .option-active {
     background-color: rgba(111, 111, 126, 0.644);
     ;
+}
+
+.hover-color:hover {
+    background-color: grey;
+    opacity: 50%;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 :root {

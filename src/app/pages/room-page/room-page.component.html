@@ -1,0 +1,14 @@
+<div class="row shakra-light" style="margin-bottom: 2px; height: calc(6% - 2px)">
+</div>
+
+<div class="row" style="height: 74%;">
+    <div class="col main-bar shakra-main-grey " style="border-right: 1px white;">
+        <div class="row overflow-y-scroll messages-block d-flex flex-column flex-nowrap p-2"
+            style="border: 1px solid rgb(48, 48, 48);">
+            <app-message *ngFor="let inmessage of messages;" [message]="inmessage"></app-message>
+        </div>
+    </div>
+</div>
+<div class="row pt-2 shakra-main-grey" style="height: 20%;">
+    <app-message-form></app-message-form>
+</div>
