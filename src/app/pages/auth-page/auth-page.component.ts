@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 export class AuthPageComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
-    this.router.navigate(["register"], { relativeTo: this.route })
+    this.router.navigate(["login"], { relativeTo: this.route })
   }
   ;
 

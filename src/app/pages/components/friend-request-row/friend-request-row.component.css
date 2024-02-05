@@ -5,3 +5,23 @@
 :host {
     border-radius: 5px;
 }
+
+.btn-size {
+    font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .btn-size {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+
+    .btn-size {
+        font-size: 10px;
+    }
+}

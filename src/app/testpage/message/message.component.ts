@@ -14,7 +14,7 @@ export class MessageComponent implements OnInit {
   ngOnInit(): void {
     this.Pics = ["assets/atef2.jpg", "assets/omNazer.jpg"]
     let random = Math.round(Math.random());
-    this.imageUrl = this.Pics[random];
+    this.imageUrl = "assets/" + this.message.userDto.image;
   }
   Pics: string[];
   imageUrl: string;

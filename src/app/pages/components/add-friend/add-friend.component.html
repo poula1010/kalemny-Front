@@ -11,9 +11,9 @@
             formControlName="username">
     </form>
 </div>
-<div class="row user-container mt-3 ms-2">
+<div class="row user-container">
     <div class="overflow-y-scroll d-flex flex-column flex-nowrap"
-        style="border: 1px solid rgb(48, 48, 48); height: 90%;">
+        style="border: 1px solid rgb(48, 48, 48); height: 70vh;">
         <app-friend-request-row class="messages-block p-1  p-3 " style="border-bottom: 1px solid grey;"
             *ngFor="let foundUser of users" [user]="foundUser"
             [requestSent]="usersWithSentRequestsMap.has(foundUser.id)"

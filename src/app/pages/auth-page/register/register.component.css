@@ -4,6 +4,10 @@
     border-color: rgb(29, 27, 27);
 }
 
+:host {
+    width: 100%;
+}
+
 ::placeholder {
     color: rgb(255, 255, 255);
     opacity: 0.9;
@@ -11,7 +15,7 @@
 }
 
 .bg-img {
-    background-image: url(/assets/starry2.png);
+    background-image: url(/assets/starry3.jpg);
     background-size: cover;
     background-position-x: left;
 

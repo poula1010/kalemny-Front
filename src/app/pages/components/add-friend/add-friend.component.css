@@ -5,10 +5,11 @@
     padding-bottom: 10px;
     background-color: var(--shakra-main-grey);
     padding: 2%;
+    height: 91vh;
 }
 
 
 .user-container {
     border: 1 solid black;
-    height: 80%;
+    height: 70vh;
 }

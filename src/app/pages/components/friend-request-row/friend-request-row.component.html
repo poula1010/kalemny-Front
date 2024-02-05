@@ -5,12 +5,12 @@
             <p class="text-center m-0 ps-3">{{user.username}}</p>
         </div>
         <div *ngIf="!alreadyFriends">
-            <button class="btn btn-dark" *ngIf="!requestSent" (click)="sendFriendRequest(user.username)">Send
+            <button class="btn btn-dark btn-size" *ngIf="!requestSent" (click)="sendFriendRequest(user.username)">Send
                 Request</button>
-            <button class="btn btn-dark" *ngIf="requestSent">Already Sent A Request</button>
+            <button class="btn btn-dark btn-size" *ngIf="requestSent">Already Sent A Request</button>
         </div>
         <div *ngIf="alreadyFriends">
-            <button class="btn btn-outline-success" disabled>Already Friends!</button>
+            <button class="btn btn-outline-success btn-size" disabled>Already Friends!</button>
         </div>
     </div>
 
