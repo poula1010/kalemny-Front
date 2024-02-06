@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { environment } from "../../environments/environment.development";
+import { environment } from "../../environments/environment";
 import { RoomDto } from "../interfaces/RoomDto";
 import { SendMessageDto } from "../interfaces/SendMessageDto";
 import { MessageDto } from "../interfaces/MessageDto";

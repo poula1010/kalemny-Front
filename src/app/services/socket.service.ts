@@ -2,7 +2,7 @@ import { Injectable, OnInit } from "@angular/core";
 import { Socket, io } from "socket.io-client";
 import { MessageService } from "./messages.service";
 import { MessageInterface } from "../interfaces/MessageInterface";
-import { environment } from "../../environments/environment.development";
+import { environment } from "../../environments/environment";
 import { RoomService } from "./room.service";
 
 @Injectable({ providedIn: "root" })
