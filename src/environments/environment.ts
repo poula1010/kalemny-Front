@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    serverUrl: "http://34.76.214.207:8081",
-    sockerServer: "http://34.76.214.207:3000"
+    serverUrl: "http://kalemny.francecentral.cloudapp.azure.com:8081",
+    sockerServer: "http://kalemny.francecentral.cloudapp.azure.com:3000"
 
 };
