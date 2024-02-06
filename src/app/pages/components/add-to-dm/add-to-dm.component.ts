@@ -21,12 +21,15 @@ export class AddToDmComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.friendsSub.unsubscribe();
     this.roomService.createRoomUsers = null;
+    this.roomService.createRoomUsernames = null;
   }
   friendsList: UserDto[];
   TestDto: UserDto;
   friendsSub: Subscription;
   ngOnInit(): void {
     this.roomService.createRoomUsers = new Set();
+    this.roomService.createRoomUsernames = new Set();
+    this.roomService.createRoomUsernames.add(this.authService.user.value.username);
     const id = this.authService.user.value.id;
     this.roomService.createRoomUsers.add(id);
     this.friendsList = this.friendsService.friendsSubject.value;
@@ -37,11 +40,16 @@ export class AddToDmComponent implements OnInit, OnDestroy {
   }
   createRoom() {
     if (this.roomService.createRoomUsers.size > 1) {
+      let roomName = "";
+      for (let roomname of this.roomService.createRoomUsernames.keys()) {
+        roomName += roomname + ",";
+      }
+      roomName = roomName.substring(0, roomName.length - 1);
       const userIds: number[] = [];
       this.roomService.createRoomUsers.forEach(userId => {
         userIds.push(userId);
       });
-      const roomDto: RoomDto = { "userIds": userIds, "roomName": "test" }
+      const roomDto: RoomDto = { "userIds": userIds, "roomName": roomName }
       this.roomService.createRoom(roomDto).subscribe(status => {
         if (status.success) {
           const newRooms = this.roomService.rooms.getValue().slice();

@@ -25,9 +25,11 @@ export class FriendDmSelectComponent implements OnInit {
     this.state = !this.state;
     if (this.state === false) {
       this.roomService.createRoomUsers.delete(this.user.id);
+      this.roomService.createRoomUsernames.delete(this.user.username);
     }
     else {
       this.roomService.createRoomUsers.add(this.user.id);
+      this.roomService.createRoomUsernames.add(this.user.username);
     }
   }
 }

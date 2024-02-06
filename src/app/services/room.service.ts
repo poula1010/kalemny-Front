@@ -18,6 +18,7 @@ export class RoomService {
     rooms = new BehaviorSubject<RoomDto[]>(null);
     closeRoom = new Subject<boolean>();
     createRoomUsers: Set<number> = null;
+    createRoomUsernames: Set<string> = null;
     getRooms() {
         return this.http.get<RoomDto[]>(this.ROOM_API_URL);
     }
